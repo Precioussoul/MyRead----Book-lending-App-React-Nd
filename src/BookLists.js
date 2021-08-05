@@ -12,7 +12,7 @@ class BookLists extends Component {
         <BookShelfContainer books={books} shelfChanger={shelfChanger} />
         {/* add a book btn */}
         <div className="open-search">
-          <button onClick={() => this.setState({ showSearchPage: true })}>
+          <button onClick={}>
             Add a book
           </button>
         </div>
