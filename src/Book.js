@@ -2,7 +2,7 @@ import React, { Component } from "react";
 import ChangeBkShelf from "./ChangeBkShelf";
 class Book extends Component {
   render() {
-    const { book } = this.props;
+    const { book, shelfChanger } = this.props;
     console.log(book + "this is book");
     return (
       <li>
@@ -17,7 +17,7 @@ class Book extends Component {
               }}
             ></div>
 
-            <ChangeBkShelf />
+            <ChangeBkShelf book={book} shelfChanger={shelfChanger} />
           </div>
           <div className="book-title">{book.title}</div>
           <div className="book-authors">{book.authors}</div>

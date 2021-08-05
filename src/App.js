@@ -16,6 +16,17 @@ class BooksApp extends React.Component {
       });
     });
   }
+  shelfChanger = (book, shelf) => {
+    const updatedMyread = this.state.myread.map((read) => {
+      if (read.id === book.id) {
+        read.shelf = shelf;
+      }
+      return read;
+    });
+    this.setState({
+      myread: updatedMyread,
+    });
+  };
 
   render() {
     const { myread } = this.state;
@@ -27,7 +38,7 @@ class BooksApp extends React.Component {
           <Booksearch />
         ) : (
           // booklist component
-          <BookLists books={myread} />
+          <BookLists books={myread} shelfChanger={this.shelfChanger} />
         )}
       </div>
     );
