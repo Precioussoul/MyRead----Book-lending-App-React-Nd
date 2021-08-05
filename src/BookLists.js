@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import { Link } from "react-router-dom";
 import BookShelfContainer from "./BookshelfContainer";
 class BookLists extends Component {
   render() {
@@ -12,9 +13,9 @@ class BookLists extends Component {
         <BookShelfContainer books={books} shelfChanger={shelfChanger} />
         {/* add a book btn */}
         <div className="open-search">
-          <button onClick={}>
-            Add a book
-          </button>
+          <Link to="/search">
+            <button>Add a book</button>
+          </Link>
         </div>
       </div>
     );
