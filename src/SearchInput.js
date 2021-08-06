@@ -5,10 +5,11 @@ class Searchinput extends Component {
   };
 
   UpdateQuery = (e) => {
+    const value = e.target.value;
     this.setState({
-      query: e.target.value,
+      query: value,
     });
-    this.props.getBookSearch(this.state.query);
+    this.props.getBookSearch(value);
   };
   render() {
     return (
