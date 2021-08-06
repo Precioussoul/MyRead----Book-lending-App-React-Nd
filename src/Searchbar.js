@@ -1,8 +1,10 @@
 import React, { Component } from "react";
 import { Link } from "react-router-dom";
 import Searchinput from "./SearchInput";
+
 class Searchbar extends Component {
   render() {
+    const { getBookSearch } = this.props;
     return (
       <div className="search-books-bar">
         {/* close search btn */}
@@ -10,7 +12,7 @@ class Searchbar extends Component {
           close
         </Link>
         {/* searchbook input */}
-        <Searchinput />
+        <Searchinput getBookSearch={getBookSearch} />
       </div>
     );
   }

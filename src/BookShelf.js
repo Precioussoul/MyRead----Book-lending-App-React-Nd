@@ -9,9 +9,10 @@ class BookShelf extends Component {
         <h2 className="bookshelf-title">{title}</h2>
         <div className="bookshelf-books">
           <ol className="books-grid">
-            {books.map((book) => (
-              <Book key={book.id} book={book} shelfChanger={shelfChanger} />
-            ))}
+            {books &&
+              books.map((book) => (
+                <Book key={book.id} book={book} shelfChanger={shelfChanger} />
+              ))}
           </ol>
         </div>
       </div>

@@ -8,6 +8,7 @@ import { Route } from "react-router-dom";
 class BooksApp extends React.Component {
   state = {
     myread: [],
+    searchLists: [],
   };
 
   componentDidMount() {
@@ -17,21 +18,43 @@ class BooksApp extends React.Component {
       });
     });
   }
+
+  getBookSearch = (query) => {
+    if (query.length > 0) {
+      BooksAPI.search(query).then((books) => {
+        console.log(books);
+        this.setState({
+          searchLists: books,
+        });
+      });
+    } else {
+      this.setState({
+        searchLists: [],
+      });
+    }
+  };
+
   shelfChanger = (book, shelf) => {
+    BooksAPI.update(book, shelf).then((books) =>
+      console.log("shelf changer" + books)
+    );
+
     const updatedMyread = this.state.myread.map((read) => {
-      if (read.id === book.id) {
+      if (read.id === book.id && shelf !== "none") {
         read.shelf = shelf;
       }
       return read;
     });
+
     this.setState({
       myread: updatedMyread,
     });
   };
 
   render() {
-    const { myread } = this.state;
-    console.log(myread);
+    const { myread, searchLists } = this.state;
+
+    console.log(searchLists + "at App js");
     return (
       <div className="app">
         <Route
@@ -46,7 +69,12 @@ class BooksApp extends React.Component {
           path="/search"
           render={() => (
             // booksearch
-            <Booksearch />
+            <Booksearch
+              books={myread}
+              searchLists={searchLists}
+              getBookSearch={this.getBookSearch}
+              shelfChanger={this.shelfChanger}
+            />
           )}
         ></Route>
       </div>
