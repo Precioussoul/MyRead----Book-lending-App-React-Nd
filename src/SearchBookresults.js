@@ -3,14 +3,24 @@ import Book from "./Book";
 
 class SearchBookresults extends Component {
   render() {
-    const { searchLists, shelfChanger } = this.props;
+    const { searchLists, books, shelfChanger } = this.props;
+    const newSearchlist = searchLists.map((list) => {
+      books.map((book) => {
+        if (book.id === list.id) {
+          list.shelf = book.shelf;
+        }
+        return book;
+      });
+      return list;
+    });
 
     return (
       <div className="search-books-results">
         <ol className="books-grid">
-          {searchLists.map((book) => (
-            <Book key={book.id} book={book} shelfChanger={shelfChanger} />
-          ))}
+          {newSearchlist &&
+            newSearchlist.map((book) => (
+              <Book key={book.id} book={book} shelfChanger={shelfChanger} />
+            ))}
         </ol>
       </div>
     );
