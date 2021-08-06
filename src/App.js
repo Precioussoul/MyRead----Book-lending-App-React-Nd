@@ -45,13 +45,12 @@ class BooksApp extends React.Component {
     BooksAPI.update(book, shelf).then((books) =>
       console.log("shelf changer" + books)
     );
-
-    const updatedMyread = this.state.myread.map((read) => {
-      if (read.id === book.id && shelf !== "none") {
-        read.shelf = shelf;
-      }
-      return read;
-    });
+    let updatedMyread = [];
+    updatedMyread = this.state.myread.filter((read) => read.id !== book.id);
+    if (shelf !== "none") {
+      book.shelf = shelf;
+      updatedMyread = updatedMyread.concat(book);
+    }
 
     this.setState({
       myread: updatedMyread,
