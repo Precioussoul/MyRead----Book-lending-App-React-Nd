@@ -26,6 +26,10 @@ body,
   margin: 0;
   color: white;
 }
+.list-books-title p {
+  margin: 0;
+  color: #ccc;
+}
 
 .list-books-content {
   padding: 0 0 80px;

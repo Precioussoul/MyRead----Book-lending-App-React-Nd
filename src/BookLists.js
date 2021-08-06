@@ -8,6 +8,10 @@ class BookLists extends Component {
       <div className="list-books">
         <div className="list-books-title">
           <h1>MyReads</h1>
+          <p>
+            A web application that allows you to select and categorize books you
+            have read, are currently reading, or want to read.
+          </p>
         </div>
         {/* bookshelf container */}
         <BookShelfContainer books={books} shelfChanger={shelfChanger} />
