@@ -4,6 +4,7 @@ import Book from "./Book";
 class SearchBookresults extends Component {
   render() {
     const { searchLists, books, shelfChanger } = this.props;
+
     const newSearchlist = searchLists.map((list) => {
       books.map((book) => {
         if (book.id === list.id) {
@@ -28,4 +29,3 @@ class SearchBookresults extends Component {
 }
 
 export default SearchBookresults;
-//
