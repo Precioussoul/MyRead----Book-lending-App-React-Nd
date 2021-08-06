@@ -23,25 +23,3 @@ class BookShelfContainer extends Component {
 }
 
 export default BookShelfContainer;
-
-/*
-
-  * bookshelf want to read 
-          <BookShelf
-            books={wantToRead}
-            title="Want to Read"
-            shelfChanger={shelfChanger}
-          />
-          * bookshelf read me *
-          <BookShelf books={readme} title="read" shelfChanger={shelfChanger} />
-
-
-           const wantToRead = books.filter((book) => book.shelf === "wantToRead");
-
-    const readme = books.filter((book) => book.shelf === "read");
-
-    // console.log("am here crd" + currentlyReading);
-    // console.log("am here wnt" + wantToRead);
-    // console.log("am here read" + readme);
-
-*/

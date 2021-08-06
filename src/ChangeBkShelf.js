@@ -1,18 +1,13 @@
 import React, { Component } from "react";
 class ChangeBkShelf extends Component {
-  state = {
-    value: this.props.shelf,
-  };
   render() {
     return (
       <div className="book-shelf-changer">
         <select
-          value={this.state.value}
+          value={this.props.shelf}
           onChange={(e) => {
             const newValue = e.target.value;
-            this.setState({
-              value: newValue,
-            });
+
             this.props.shelfChanger(this.props.book, newValue);
           }}
         >
