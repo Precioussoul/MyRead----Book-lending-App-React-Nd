@@ -5,11 +5,15 @@ import SearchBookresults from "./SearchBookresults";
 
 class Booksearch extends Component {
   render() {
-    const { searchLists, books, getBookSearch, shelfChanger } = this.props;
+    const { searchLists, books, clearSearchList, getBookSearch, shelfChanger } =
+      this.props;
     return (
       <div className="search-books">
         {/* searchbar */}
-        <Searchbar getBookSearch={getBookSearch} />
+        <Searchbar
+          getBookSearch={getBookSearch}
+          clearSearchList={clearSearchList}
+        />
 
         <SearchBookresults
           books={books}

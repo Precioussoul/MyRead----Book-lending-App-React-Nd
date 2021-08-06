@@ -2,6 +2,8 @@ import React from "react";
 import * as BooksAPI from "./BooksAPI";
 import "./App.css";
 import BookLists from "./BookLists";
+import { debounce } from "throttle-debounce";
+
 import Booksearch from "./Booksearch";
 import { Route } from "react-router-dom";
 
@@ -18,9 +20,8 @@ class BooksApp extends React.Component {
       });
     });
   }
-
-  getBookSearch = (query) => {
-    if (query.length > 0 && query !== "") {
+  getBookSearch = debounce(500, false, (query) => {
+    if (query.length > 0) {
       BooksAPI.search(query).then((books) => {
         console.log(books);
         this.setState({
@@ -32,6 +33,12 @@ class BooksApp extends React.Component {
         searchLists: [],
       });
     }
+  });
+
+  clearSearchList = () => {
+    this.setState({
+      searchLists: [],
+    });
   };
 
   shelfChanger = (book, shelf) => {
@@ -72,6 +79,7 @@ class BooksApp extends React.Component {
             <Booksearch
               searchLists={searchLists}
               getBookSearch={this.getBookSearch}
+              clearSearchList={this.clearSearchList}
               shelfChanger={this.shelfChanger}
             />
           )}

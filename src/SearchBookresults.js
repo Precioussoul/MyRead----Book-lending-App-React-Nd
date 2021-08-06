@@ -8,10 +8,9 @@ class SearchBookresults extends Component {
     return (
       <div className="search-books-results">
         <ol className="books-grid">
-          {searchLists &&
-            searchLists.map((book) => (
-              <Book key={book.id} book={book} shelfChanger={shelfChanger} />
-            ))}
+          {searchLists.map((book) => (
+            <Book key={book.id} book={book} shelfChanger={shelfChanger} />
+          ))}
         </ol>
       </div>
     );

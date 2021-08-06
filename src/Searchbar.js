@@ -4,11 +4,11 @@ import Searchinput from "./SearchInput";
 
 class Searchbar extends Component {
   render() {
-    const { getBookSearch } = this.props;
+    const { getBookSearch, clearSearchList } = this.props;
     return (
       <div className="search-books-bar">
         {/* close search btn */}
-        <Link to="/" className="close-search">
+        <Link to="/" className="close-search" onClick={clearSearchList}>
           close
         </Link>
         {/* searchbook input */}
