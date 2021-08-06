@@ -70,7 +70,6 @@ class BooksApp extends React.Component {
           render={() => (
             // booksearch
             <Booksearch
-              books={myread}
               searchLists={searchLists}
               getBookSearch={this.getBookSearch}
               shelfChanger={this.shelfChanger}
