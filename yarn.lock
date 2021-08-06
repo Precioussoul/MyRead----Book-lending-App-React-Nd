@@ -6578,6 +6578,7 @@
     "jest-snapshot" "^26.6.2"
 
 "jest-resolve@*":
+  "integrity" "sha512-tRAz2bwraHufNp+CCmAD8ciyCpXCs1NQxB5EJAmtCFy6BN81loFEGWKzYu26Y62lAJJe4X4jg36Kf+NsQyiStQ=="
   "version" "26.6.0"
   dependencies:
     "@jest/types" "^26.6.0"
@@ -10822,6 +10823,11 @@
   "integrity" "sha512-fcwX4mndzpLQKBS1DVYhGAcYaYt7vsHNIvQV+WXMvnow5cgjPphq5CaayLaGsjRdSCKZFNGt7/GYAuXaNOiYCA=="
   "resolved" "https://registry.npmjs.org/throat/-/throat-5.0.0.tgz"
   "version" "5.0.0"
+
+"throttle-debounce@^3.0.1":
+  "integrity" "sha512-dTEWWNu6JmeVXY0ZYoPuH5cRIwc0MeGbJwah9KUNYSJwommQpCzTySTpEe8Gs1J23aeWEuAobe4Ag7EHVt/LOg=="
+  "resolved" "https://registry.npmjs.org/throttle-debounce/-/throttle-debounce-3.0.1.tgz"
+  "version" "3.0.1"
 
 "through2@^2.0.0":
   "integrity" "sha512-/mrRod8xqpA+IHSLyGCQ2s8SPHiCDEeQJSep1jqLYeEUClOFG2Qsh+4FU6G9VeqpZnGW/Su8LQGc4YKni5rYSQ=="
