@@ -63,27 +63,22 @@ class BooksApp extends React.Component {
     console.log(searchLists + "at App js");
     return (
       <div className="app">
-        <Route
-          exact
-          path="/"
-          render={() => (
-            // booklist component
-            <BookLists books={myread} shelfChanger={this.shelfChanger} />
-          )}
-        ></Route>
-        <Route
-          path="/search"
-          render={() => (
-            // booksearch
-            <Booksearch
-              books={myread}
-              searchLists={searchLists}
-              getBookSearch={this.getBookSearch}
-              clearSearchList={this.clearSearchList}
-              shelfChanger={this.shelfChanger}
-            />
-          )}
-        ></Route>
+        <Route exact path="/">
+          {/* booklist component */}
+
+          <BookLists books={myread} shelfChanger={this.shelfChanger} />
+        </Route>
+        <Route path="/search">
+          {/* booksearch */}
+
+          <Booksearch
+            books={myread}
+            searchLists={searchLists}
+            getBookSearch={this.getBookSearch}
+            clearSearchList={this.clearSearchList}
+            shelfChanger={this.shelfChanger}
+          />
+        </Route>
       </div>
     );
   }
