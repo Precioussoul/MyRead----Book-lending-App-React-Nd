@@ -20,18 +20,18 @@ class BooksApp extends React.Component {
       });
     });
   }
+
   getBookSearch = debounce(500, false, (query) => {
     if (query.length > 0) {
       BooksAPI.search(query).then((books) => {
-        console.log(books);
-        this.setState({
-          searchLists: books,
-        });
+        if (books.error) {
+          this.setState({ searchLists: [] });
+        } else {
+          this.setState({ searchLists: books });
+        }
       });
     } else {
-      this.setState({
-        searchLists: [],
-      });
+      this.setState({ searchLists: [] });
     }
   });
 
