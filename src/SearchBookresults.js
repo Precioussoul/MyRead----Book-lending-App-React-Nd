@@ -5,7 +5,7 @@ import Book from "./Book";
 class SearchBookresults extends Component {
   render() {
     const { searchLists, books, shelfChanger } = this.props;
-
+    console.log(books);
     const newSearchlist = searchLists.map((list) => {
       books.map((book) => {
         if (book.id === list.id) {
@@ -32,7 +32,5 @@ class SearchBookresults extends Component {
 export default SearchBookresults;
 
 SearchBookresults.propTypes = {
-  searchLists: PropTypes.array.isRequired,
-  books: PropTypes.array.isRequired,
   shelfChanger: PropTypes.func.isRequired,
 };

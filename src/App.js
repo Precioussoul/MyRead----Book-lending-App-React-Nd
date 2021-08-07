@@ -21,6 +21,8 @@ class BooksApp extends React.Component {
     });
   }
 
+  // after trying async and await as suggested in the code review, its started throwing errors at searchresults for some search "manage,art"
+
   getBookSearch = debounce(500, false, (query) => {
     if (query.length > 0) {
       BooksAPI.search(query).then((books) => {
