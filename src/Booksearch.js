@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import PropTypes from "prop-types";
 import Searchbar from "./Searchbar";
 
 import SearchBookresults from "./SearchBookresults";
@@ -26,3 +27,11 @@ class Booksearch extends Component {
 }
 
 export default Booksearch;
+
+Booksearch.propTypes = {
+  searchLists: PropTypes.array.isRequired,
+  books: PropTypes.array.isRequired,
+  clearSearchList: PropTypes.func.isRequired,
+  getBookSearch: PropTypes.func.isRequired,
+  shelfChanger: PropTypes.func.isRequired,
+};
