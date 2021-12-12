@@ -12,6 +12,10 @@ It also allow you to search for books based on title and author.
 This app is the first of three projects required for [Udacity's React Nanodegree program](https://classroom.udacity.com/nanodegrees/nd019).
 REACT FUNDAMENTAL PROJECT 1
 
+
+ ## Check Live version [click here](https://myreadnd.netlify.app/)
+
+
 ## Built With
 
 - HTML, CSS , JAVASCRIPT
@@ -44,6 +48,7 @@ The project can be run with
 - Twitter: [@twitterhandle](https://twitter.com/Codedrill1)
  
 ## Acknowledgments
+
 
 react doc
 classroom
